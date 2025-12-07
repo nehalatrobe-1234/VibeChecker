@@ -1,0 +1,568 @@
+**Hello everyone!**
+
+This assignment is based on basics of python and then gradually moves on to the python libraries required for working in ML.
+
+> **Workflow**
+
+Above each cell there are some instructions and resources (wherever necessary) for completing the question. You are supposed to solve the questions in the cells below the question text, feel free to add cells if you want.
+
+> **Note:** All the documentations provided are very extensive and you do not need to know everything but you are expected to be able to refer to them as and when required.
+
+# Copy this notebook in your drive and in submission please rename the file as <name_roll.no_PYTHON>
+
+# Basic Python
+
+If you are absolutely new to python, quickly go through this video: https://www.youtube.com/watch?v=K5KVEU3aaeQ&ab_channel=ProgrammingwithMosh
+
+This will help you brush up your python to get your started.
+Please note that things like conditional if else statements, basic string operations, tuples, etc. aren't included separately in this task but you are obviously expected to be familiar with them. *italicised text*
+
+***Print hello world.***
+
+print("Hello, World.")
+
+***Print the sum of two numbers which the user inputs.***
+
+print(2+2)
+
+***Loops (Logical Thinking)***
+
+Print the following patterns using a loop of your choice:
+
+
+![pt1.png](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAAB/CAYAAAC5bA/iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAG8SURBVHhe7dlBat0wFEDRn+7o738Rf0ltFTpw6LEHegNN7oEQ8BsYriRI5K/ff73yw69/v3NRFCgKFAWKAkWBosAoyvv9/v65c3q+q50CW3/R3q3O5/P5/n16PrW1U/Ty67PT86mOD4yirNV5WqHT8139lwwdHygKFAWKAkWBokBRoChQFCgKFAWKAkWBokBRoCgwirIukO8ukZfT813tFOgTB2ztFL38+uz0fKrjA6Moa3WeVuj0fFefOKDjA0WBokBRoChQFCgKFAWKAkWBokBRoChQFCgKjKKsu9K7+9Ll9HxXOwW6zYetnaKXX5+dnk91fGAUZa3O0wqdnu/qNh86PlAUKAoUBYoCRYGiQFGgKFAUKAoUBYoCRYGiQFFgFGVdIN9dIi+n57vaKdAnDtjaKXr59dnp+VTHB0ZR1uo8rdDp+a4+cUDHB4oCRYGiQFGgKFAUKAoUBYoCRYGiQFGgKFAUKAqMoqwL5LtL5OX0fFc7BfrEAVs7RS+/Pjs9n+r4wCjKWp2nFTo939UnDuj4QFGgKFAUKAoUBYoCRYGiQFGgKFAUKAoUBYoCRYGiQFGgKFAUKMp/Xq8/xsGHIafpI0MAAAAASUVORK5CYII=)
+
+![pt2.png](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAACDCAYAAADF9eYzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIySURBVHhe7dldbusgGADRtCuy97+ILKktaZCQZRcPmILFHKm6P99LPAEnNR9fPx465fP9p04wFmAswFiAsQBjAcYCjAUYCzAWYCzAWICxgOJY67q+fmaCY80YKcKxns/n62dG3rMAYwHGAowFGAvApztHXxtm+IT0KAxwGwLGAowFGAswFmAswFiAsQBjAcYCjAUYCyj6RXr75GH7xCE3vyu8smKI9OAijZOb35nbEMCx0hWzJze/s6qVlW65Pbn53RTHmi1UUBRrxlABjjVrqODy053c/M483QGqPg1nYyzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwFdjsJy82GFWMSyLO+//Qr/Tv+vdj4yvA1zq6B2PjLvWUDxk9L0vrO3WmrnI6p+rBwv+uiCa+cjcRsCOFa6ffbUzkfm9yzAozDAexZgLMBYgLEAYwHGAowFGAswFmAswFiAsQBjAcM+Vs7Ne3BlAUWxtg/vtlrPeyleWbmt0XreA44166oKilbWjKsqQJ+Gf73r4QJbz3urOrCIF3d0Ia3n/+2So7AgvaDW8148CgP8UgoYCzAWYCzAWICxAGMBxgKMBRgLMBZgLOCWTx16PZWoinX0AnvPW3EbAlWxwjsc3+U9vedXK44VtkDcBnsvuPe8haJY8UUe6T1vxXsWgGPllnzveUuXfM/above81Y83QG8ZwHGAowFGAswFmAswFiAsQBjAcYCjAUYCzAWYCzAWICxAGOd9nh8A8Rne3fZ4uqcAAAAAElFTkSuQmCC)
+
+![pt3.png](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIIAAACACAYAAADHy7H2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIsSURBVHhe7dxbitswAEDRtDvK/heRJbWTSwVuhpRaZkZ5nANhfhwLrIsfkZkfvz6ceHs///zlzQmBCIEIgQiBCIEIgQiBCIEIgQiBHArhfD734flNhSCA1zMVwuVy6cPrcI9AhECEQIRAhECm3lm89+joSeJ5eXmVuDQQIRAhECEQIRAhECEQIRAhECEQIRAhECGQ6dXH26XomSXosQ/L1+tNnRG2Ezgmcc/r7ddt92zP11tyadgGxGNwj0CEQIRAhECEQJb8jnDv0dGTxDpeZycuDUQIRAhECEQIRAhECEQIRAhECEQIRAhECOTQ6uNYTp5ZPj6yjD0cGZ+/TZ0RrhNw752C/7GdwDGJe/Z3dHw+mwphO4ErrB7/FblHIEIgQiBCIEIgU78j3Ht023Mnf7uPI98dPEnM8zo7cWkgQiBCIEIgQiBCIEIgQiBCIEIgQiBCIEv+mdYw9nHku8N3j/9qps4I2wM4DuLtxPzLdds9299aPf4rWnJp2E7gCqvHf0TuEYgQiBCIEIgQyJLfEe49uh3Zx3eP/2q8xUxcGogQiBCIEIgQiBCIEIgQiBCIEIgQiBCIEMih1cexnDuzfHtkGXl45vEfzdQZ4XoAbg/kHtsDOA7inv09+/iPaCqE7QFc4d3H/wruEYgQiBCIEIgQyNTvCPcenfbcSd/u48h3h2ca/9F4nZ24NBAhECEQIRAhECEQIRAhECEQIRAhECEQIRAhECHw4XT6DbKS7tzgk3CtAAAAAElFTkSuQmCC)
+
+![pt4.png](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHMAAACECAYAAACj1BRHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIVSURBVHhe7dpBjtpAEEBRkhtx/0NwpCQ9ChILDAvG0+7n/ySE5NrM8N29ql9//rmE8Pv/dwDFhBQTUkxIMSHFhBQTUkxIMSHFhBQTUkxIMSHFhBQTslvM6/X69dly9vkeOpmQb9802Hobb7fb1/fZ53v69pP57I9+fHb2+Z66ZiG7xRxv46s38uzzPbSdB+mahRQTUkxIMSHFhBQTUkxIMSHFhBQTUkxIMSHFhBQTUkxIMSHTYo7Fp63lp2H1+QydTMiPr41svc33fZnV5zP9+Ml89k8/Plt9PlPXLGRazPE2v3qjV5/P0KolpGsWUkxIMSHFhBQTUkxIMSHFhBQTUkxIMSHFhBQTUkxIMSGHjTl2bbb2bYbZ8yPqZEIOt2mwdRruKxqz50d2uJP57Ed7fDZ7fmRds5DDxhyn4dWJmD0/orbzIF2zkGJCigkpJqSYkGJCigkpJqSYkGJCigkpJqSYkGJCigkpJmTZmGPxamv5avh0vqJOJmS5tZGt03Tf1/l0vrLlTuazH/3x2afzlXXNQpaNOU7TqxP16XxFrVpCumYhxYQUE1JMSDEhxYQUE1JMSDEhxYQUE1JMSDEhxYQUE8LGFLfv3ulkQrhNA3n77h3uZD6LdoaQQ9cshI0pbt+903YepGsWUkxIMSHFhBQTUkxIMSHFhBQTUkxIMSHFhBQTUkxIMSHFhBQTUkxIMRmXy1/tTocrKFhBcgAAAABJRU5ErkJggg==)
+
+i = 0
+while i < 6:
+        print("*****")
+        i += 1
+
+
+
+
+
+
+n = 5  # Number of rows
+
+for i in range(1, n + 1):  # Outer loop for rows
+    for j in range(1, i + 1):  # Inner loop for columns
+        # Print 1 if (i + j) is even, else 0
+        if (i + j) % 2 == 0:
+            print("1", end="")
+        else:
+            print("0", end="")
+    print()  
+
+rows = 5
+
+max_stars = 9 # Maximum stars in the first row
+
+for i in range(rows):
+    # Print spaces first
+    for space in range(i):
+        print(" ", end="")  # Increasing spaces each row
+    # Print stars
+    stars = max_stars - (2 * i)  # Decrease stars by 2 each row
+    for star in range(stars):
+        print("*", end="")
+    print()
+
+i = 9
+while i > 0:
+    print("*" * i)
+    i -= 2
+
+***Consider a list l = [1,12,43,4,15,26].***
+
+
+1. Write this list in python code.
+2. Append a number to this list.
+3. Sort this list in increasing order.
+4. Reverse the sorted list.
+5. Repeat questions (1-4) using loops and list indexing (Tip: if you can't figure out sorting, don't worry, you may skip it for now, those interested can look up "bubble sort" to get a hint).
+
+list = [1,12,43,4,15,26]
+print(list)
+list.append(30)
+print(list)
+list.sort()
+print(list)
+list.sort(reverse = True)
+print(list)
+
+
+thislist = [1,12,43,4,15,26]
+for i in range(len(thislist)):
+  print(thislist[i])
+    
+
+L = [1, 12, 43, 4, 15, 26]
+newlist = []
+
+for x in L:
+    newlist.append(x)
+
+newlist.append(30)
+print(newlist)
+
+newlist.sort()
+print(newlist)
+
+newlist.sort(reverse = True)
+print(newlist)
+
+
+***Functions***
+
+(Tip: Before starting this section, brush up on strings in python)
+
+Write a function defintion that:
+1. Adds the string "Hello, " to the beginning and "!" to the end of any given input.
+2. Takes in two numbers, squares each number, then returns the sum of both squares.
+3. Takes in value and returns the count of the nubmer of vowels in a sequence.
+4. Takes in string and returns the string without any vowels.
+5. Takes in a list of strings and returns the shortest string in the list.
+6. Takes in sequence of numbers and returns the odd numbers in a list.
+7. Takes in sequence of numbers and returns all the numbers added together.
+
+a = "I am learning"
+print(a)
+
+b = "Hello,"
+c = "!"
+
+d = b + a + c
+print(d)
+
+
+
+def add_hello():
+    text = "World"
+    print(f"Default input: {text}")
+
+    step1 = "Hello, " + text
+    print(f"After adding 'Hello, ': {step1}")
+
+    result = step1 + "!"
+    print(f"After adding '!': {result}")
+
+    return result
+
+# Call the function and display the final output
+final_output = add_hello()
+print(f"\nFinal Output: {final_output}")
+
+def sum_of_squares(a, b):
+    return a**2 + b**2
+
+def sum_of_squares():
+    a = 3
+    b = 4
+    print(f"Default numbers: a = {a}, b = {b}")
+
+    square_a = a ** 2
+    square_b = b ** 2
+    print(f"Square of a: {square_a}")
+    print(f"Square of b: {square_b}")
+
+    result = square_a + square_b
+    print(f"Sum of squares: {result}")
+
+    return result
+
+# Call the function
+final_output = sum_of_squares()
+print(f"\nFinal Output: {final_output}")
+
+def count_vowels():
+    text = "Programming"
+    print(f"Default input: {text}")
+
+    vowels = "aeiou"
+    print(f"Vowels to check: {vowels}")
+
+    lower_text = text.lower()
+    print(f"Converted to lowercase: {lower_text}")
+
+    count = 0
+
+    for char in lower_text:
+        if char in vowels:
+            count += 1
+            print(f"Found vowel: {char}, Current count: {count}")
+
+    print(f"Total vowels in '{text}': {count}")
+    return count
+
+# Call the function
+final_output = count_vowels()
+print(f"\nFinal Output: {final_output}")
+
+def remove_vowels():
+    text = "Programming"
+    print(f"Default input: {text}")
+
+    vowels = "aeiouAEIOU"
+    print(f"Vowels to remove: {vowels}")
+
+    result = ""
+
+    for char in text:
+        if char not in vowels:
+            result += char  # Keep non-vowel characters
+        else:
+            print(f"Removing vowel: {char}")
+
+    print(f"String without vowels: {result}")
+    return result
+
+# Call the function
+final_output = remove_vowels()
+print(f"\nFinal Output: {final_output}")
+
+def shortest_string(strings):
+    print(f"Default list: {strings}")
+    # Initialize the shortest string as the first element
+    shortest = strings[0]
+    print(f"Starting shortest string: {shortest}")
+
+    # Loop through the list to find the shortest string
+    for s in strings:
+        if len(s) < len(shortest):
+            print(f"Found shorter string: {s} (length {len(s)})")
+            shortest = s
+
+    # Print the final shortest string
+    print(f"Shortest string in the list: {shortest}")
+    return shortest
+
+# Call the function with a default list
+default_strings = ["apple", "banana", "kiwi", "grape"]
+final_output = shortest_string(default_strings)
+print(f"\nFinal Output: {final_output}")
+
+def get_odds():
+    # Step 1: Take a default list of numbers
+    numbers = [1, 2, 3, 4, 5, 6, 7]
+    print(f"Default list: {numbers}")
+
+    # Step 2: Initialize an empty list for odd numbers
+    odds = []
+
+    # Step 3: Loop through each number and check if it's odd
+    for num in numbers:
+        if num % 2 != 0:  # Odd condition
+            odds.append(num)
+            print(f"Found odd number: {num}")
+
+    # Step 4: Print the final list of odd numbers
+    print(f"Odd numbers list: {odds}")
+    return odds
+
+# Call the function
+final_output = get_odds()
+print(f"\nFinal Output: {final_output}")
+
+def sum_numbers():
+    # Step 1: Take a default list of numbers
+    numbers = [1, 2, 3, 4, 5]
+    print(f"Default list: {numbers}")
+
+    # Step 2: Initialize total sum as 0
+    total = 0
+    print(f"Starting sum: {total}")
+
+    # Step 3: Loop through each number and add to total
+    for num in numbers:
+        total += num
+        print(f"Adding {num}, Current sum: {total}")
+
+    # Step 4: Print the final sum
+    print(f"Final sum of all numbers: {total}")
+    return total
+
+# Call the function
+final_output = sum_numbers()
+print(f"\nFinal Output: {final_output}")
+
+***Sets***
+
+(Read up on sets in python)
+
+Write a function definition that:
+1. Takes in a list and returns a set with only the unique values from that list.
+2. Takes two lists and returns a single set with the values that each list has in common.
+
+(Bonus - Try doing the above questions from scratch using loops)
+
+def unique_values_loop():
+    my_list = [1, 2, 2, 3, 4, 4, 5]
+    unique_list = []
+    for item in my_list:
+        if item not in unique_list:
+            unique_list.append(item)
+    print(f"Unique values: {unique_list}")
+    return unique_list
+
+unique_values_loop()
+
+
+def common_values_loop():
+    list1 = [1, 2, 3, 4, 5]
+    list2 = [3, 4, 5, 6, 7]
+    common_list = []
+    for item in list1:
+        if item in list2 and item not in common_list:
+            common_list.append(item)
+    print(f"Common values: {common_list}")
+    return common_list
+
+common_values_loop()
+
+# Python for ML
+
+**Brief on AI/ML/DL:**
+
+Artifical Intelligence is a very broad term that refers to any method/process which can help a machine perform human like tasks. ML is a subset of AI and DL is a subset of ML.
+
+Three major libraries used very widely for data processing, visualisation and manipulation are: `numpy`,`pandas` and `matplotlib`. As you explore the domains of ML more, you will soon encounter domain specific libraries like `open-cv`, `scikit-learn`, `nltk`, etc. and as you dive into DL,`tensorflow` and `pytorch` would be your best friends!
+
+This next section deals with numpy, pandas and matplotlib
+
+# ------------------------------------------------ NUMPY ------------------------------------------------
+# Documentation: https://numpy.org/doc/stable/reference/index.html#reference
+# Hands on tutorial: https://www.w3schools.com/python/numpy/numpy_intro.asp
+
+1. Crate an array of 10 zeros.
+2. Create an array of 10 fives.
+3. Create a 3x3 matrix with values ranging from 0 to 8
+4. Use NumPy to generate a random number between 0 and 1
+5. Create an array of 20 linearly spaced points between 0 and 1
+
+import numpy as np
+zeros_array = np.zeros(10)
+print(zeros_array)
+
+
+import numpy as np
+fives_array = np.full(10,5)
+print(fives_array)
+
+matrix = np.arange(9).reshape(3, 3)
+print(matrix)
+
+
+rand_num = np.random.rand()
+print(rand_num)
+
+
+Replicate the following outputs:
+
+
+linear_array = np.linspace(0, 1, 20)
+print(linear_array)
+
+
+
+
+# ------------------------------------------------ MATPLOTLIB ------------------------------------------------
+# Documentation: https://matplotlib.org/stable/api/pyplot_summary.html
+# Hands on tutorial: https://www.w3schools.com/python/matplotlib_pyplot.asp
+
+**Line plotting**
+
+We begin by simply plotting a straight line, you many choose any line of your choice. Generate your own data! (atleast 100 datapoints)
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Generate data (100 datapoints)
+x = np.linspace(0, 10, 100)
+y = 2 * x + 5
+
+#PLOT
+plt.plot(x, y)
+plt.xlabel("X values")
+plt.ylabel("Y values")
+plt.title("Straight Line Plot: y = 2x + 5")
+
+plt.show()
+
+
+**Matplotlib figures**
+
+We will now deal with matplotlib figure objects and creating axes using them. You are tasked with creating a figure object and adding two set of axes in that figure make sure that they are appropriately placed.
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(0, 10, 100)
+y = 2 * x + 5
+plt.plot(x, y)
+
+plt.xlabel("Average Pulse")
+plt.ylabel("Calorie Burnage")
+
+plt.show()
+
+**Now use the list x generated earlier and create two new y lists to plot on the axes you just created.**
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(0, 10, 100)
+
+# Creating two new y lists
+y1 = 2 * x + 1
+y2 = x ** 2
+
+# Create figure
+fig = plt.figure(figsize=(8, 5))
+
+# First set of axes
+ax1 = fig.add_axes([0.1, 0.1, 0.35, 0.8])
+ax1.plot(x, y1)
+ax1.set_title("Linear Function")
+ax1.set_xlabel("x")
+ax1.set_ylabel("y = 2x + 1")
+
+# Second set of axes
+ax2 = fig.add_axes([0.55, 0.1, 0.35, 0.8])
+ax2.plot(x, y2)
+ax2.set_title("Quadratic Function")
+ax2.set_xlabel("x")
+ax2.set_ylabel("y = x²")
+
+# Display plot
+plt.show()
+
+
+**Plots**
+
+Plot the following plots using matplotlib, you many generate your own data or get it from the internet:
+
+1. Histogram
+2. Scatter Plot
+3. Boxplot
+4. Pie charts
+
+(Bonus - Read up on the use-case of histograms in EDA and ML in general, they are VERY useful! Also, look up **Violin plots** if you have extra time)
+
+import numpy as np
+
+x = np.random.normal(170, 10, 250)
+
+plt.hist(x)
+plt.show()
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.array([5,7,8,7,2,17,2,9,4,11,12,9,6])
+y = np.array([99,86,87,88,111,86,103,87,94,78,77,85,86])
+
+plt.scatter(x, y)
+plt.show()
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+data = np.random.randn(100)
+
+plt.boxplot(data)
+plt.title("Box Plot Example")
+plt.ylabel("Values")
+plt.show()
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+y = np.array([35, 25, 25, 15])
+
+plt.pie(y)
+plt.show() 
+
+# ------------------------------------------------ PANDAS ------------------------------------------------
+# Documentation: https://pandas.pydata.org/docs/reference/index.html
+# Hands on tutorial: https://www.w3schools.com/python/pandas/pandas_intro.asp
+# You will need a csv file for this part of the assignment, download it here: https://www.kaggle.com/datasets/shibumohapatra/house-price
+
+**Perform the following operations on the csv file:**
+
+1. Read the csv into a pandas dataframe and back it up (you will thank yourself for doing this when you mess up something while manipulating the dataframe).
+2. Explore the dataframe (find out the different ways you can do this).
+3. Play around with each column of the dataframe and figure out ways to modify them according to your needs.
+4. Read up on ``iloc`` and demonstrate it on the dataframe.
+5. Handle ``null`` values in the dataframe.
+6. Try dropping rows/columns.
+7. Filter rows where a string column starts with a specific letter.
+8. Create a new column as a combination of two existing columns (this is feature engineering which you may use in your ML journey).
+
+!ls {path}
+
+import os
+import pandas as pd
+
+# Assuming 'path' variable is available from previous kagglehub download
+csv_file_path = os.path.join(path, '1553768847-housing.csv')
+df = pd.read_csv(csv_file_path)
+print("DataFrame loaded successfully!\n")
+print(df.head())
+
+print("\nShape of DataFrame:", df.shape)
+print("\nColumns:", df.columns)
+print("\nData Types:\n", df.dtypes)
+print("\nSummary Statistics:\n", df.describe())
+print("\nNull Values:\n", df.isnull().sum())
+
+
+df['ocean_proximity'] = df['ocean_proximity'].str.upper()
+
+df['housing_median_age'] = df['housing_median_age'] + 10
+print("\n Columns modified successfully!")
+
+print("\nFirst 5 rows and 3 columns using iloc:\n", df.iloc[:5, :3])
+print("\nSpecific cell (row 0, col 1):", df.iloc[0, 1])
+
+df.fillna(0, inplace=True)
+print("\n Null values handled!")
+
+df.drop(columns=['population'], inplace=True)
+
+# Drop a row by index (e.g., first row)
+df.drop(index=0, inplace=True)
+print("\n Dropped column and row successfully!")
+
+filtered_df = df[df['ocean_proximity'].str.startswith('I')]
+print("\nFiltered rows where ocean_proximity starts with 'I':\n", filtered_df.head())
+
+df['location'] = df['longitude'].astype(str) + ", " + df['latitude'].astype(str)
+print("\n New column 'location' created successfully!")
+
+df.to_csv("housing_modified.csv", index=False)
+print("\n Modified DataFrame saved as 'housing_modified.csv'")
+
+
+import kagglehub
+
+# Download latest version
+path = kagglehub.dataset_download("shibumohapatra/house-price")
+
+print("Path to dataset files:", path)
+
+import pandas as pd
+import os
+
+# Construct the full path to the CSV file
+csv_file_path = os.path.join(path, '1553768847-housing.csv')
+
+df = pd.read_csv(csv_file_path)
+
+print(df.to_string())
