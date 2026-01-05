@@ -1,0 +1,9 @@
+# Google Colab Notebook
+https://colab.research.google.com/drive/1rAKkiH_W-FLyZNCGlSmjlTtFboAMIloy?usp=sharing
+
+# Notes
+- This notebook contains:
+  - Raw data EDA of Merged Data
+  - Cleaned data analysis for Individual files & Merged data.
+  - CLIP text–image embedding
+  - Engagement comparison plots
